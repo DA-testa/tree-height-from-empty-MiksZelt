@@ -6,11 +6,11 @@ import threading
 import numpy as np
 
 
-def compute_height(n, parents):
-    pos = np.zeros([n], dtype = np.int32)
-    max_h_arr = np.zeros([n], dtype = np.int32)
+def compute_height(sk, parents):
+    pos = np.zeros([sk], dtype = np.int32)
+    max_h_arr = np.zeros([sk], dtype = np.int32)
 
-    for i in range(n):
+    for i in range(sk):
         if pos[i] == 0:
             node = i
             rep = 0
@@ -27,9 +27,10 @@ def main():
     inp = input()
 
     if "I" in inp:
-        n = int(input())
-        parents = np.array(list((map(int, input().strip().split()))))[:n]
-        print(compute_height(n, parents))
+        sk = int(input())
+        parents = np.array(list((map(int, input().strip().split()))))[:sk]
+        height = compute_height(sk, parents)
+        print(height)
 
 
     elif "F" in inp:
@@ -38,9 +39,10 @@ def main():
         if "a" not in file_name:
             file = "test/" + file_name
             with open(file, encoding="utf8") as f:
-                n = int(f.readLine())
-                parents = np.array(list((map(int, f.readLine().strip().split()))))[:n]
-                print(compute_height(n, parents))
+                sk = int(f.readLine())
+                parents = np.array(list((map(int, f.readLine().strip().split()))))[:sk]
+                height = compute_height(sk, parents)
+                print(height)
     
 
 
