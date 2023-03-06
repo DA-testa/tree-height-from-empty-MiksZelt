@@ -27,7 +27,7 @@ def main():
 
     if "I" in UserInput:
         n = int(input())
-        parents = (list(map(int, input().strip().split())))
+        parents = np.array(list(map(int, input().strip().split())))
         print(compute_height(n, parents))
 
 
@@ -40,7 +40,7 @@ def main():
 
         with open(file_path, "r" ) as f:
             n = int(f.readLine())
-            parents = (list(map(int, f.readLine().strip().split())))
+            parents = np.array(list(map(int, f.readLine().strip().split())))
             print(compute_height(n, parents))
     else:
         quit()  
