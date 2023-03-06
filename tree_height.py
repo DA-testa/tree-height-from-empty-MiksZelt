@@ -39,8 +39,8 @@ def main():
         if "a" not in file_name:
             file = "test/" + file_name
             with open(file, encoding="utf8") as f:
-                sk = int(f.readLine())
-                parents = np.array(list((map(int, f.readLine().strip().split()))))[:sk]
+                sk = int(f.readline())
+                parents = np.array(list((map(int, f.readline().strip().split()))))[:sk]
                 height = compute_height(sk, parents)
                 print(height)
     
