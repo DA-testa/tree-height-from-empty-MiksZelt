@@ -27,7 +27,7 @@ def main():
 
     if "I" in UserInput:
         n = int(input())
-        parents = np.array(list(map(int, input().strip().split())))
+        parents = np.array(list(map(int, input().strip().split())))[:n]
         print(compute_height(n, parents))
 
 
@@ -40,18 +40,15 @@ def main():
 
         with open(file_path, "r" ) as f:
             n = int(f.readLine())
-            parents = np.array(list(map(int, f.readLine().strip().split())))
+            parents = np.array(list(map(int, f.readLine().strip().split())))[:n]
             print(compute_height(n, parents))
-    else:
-        quit()  
+    
 
 
 
-# In Python, the default limit on recursion depth is rather low,
-# so raise it here for this problem. Note that to take advantage
-# of bigger stack, we have to launch the computation in a new thread.
-sys.setrecursionlimit(10**7)  # max depth of recursion
-threading.stack_size(2**27)   # new thread will get stack of such size
+
+sys.setrecursionlimit(10**7)  
+threading.stack_size(2**27)  
 threading.Thread(target=main).start()
 #main()
 # print(numpy.array([1,2,3]))
