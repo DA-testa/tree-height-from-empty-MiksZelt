@@ -27,21 +27,19 @@ def main():
 
     if "I" in UserInput:
         n = int(input())
-        parents = np.array(list(map(int, input().strip().split())))[:n]
+        parents = np.array(list((map(int, input().strip().split()))))[:n]
         print(compute_height(n, parents))
 
 
     elif "F" in UserInput:
-        file_name = input().strip()
+        file_name = input()
 
-        if  "a" in file_name:
-            return
-        file_path = ("test/" + file_name)
-
-        with open(file_path, "r" ) as f:
-            n = int(f.readLine())
-            parents = np.array(list(map(int, f.readLine().strip().split())))[:n]
-            print(compute_height(n, parents))
+        if "a" not in file_name:
+            file = "test/" + file_name
+            with open(file, "r" ) as f:
+                n = int(f.readLine())
+                parents = np.array(list((map(int, f.readLine().strip().split()))))[:n]
+                print(compute_height(n, parents))
     
 
 
