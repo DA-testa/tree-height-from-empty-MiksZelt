@@ -28,7 +28,7 @@ def main():
 
     if "I" in inp:
         sk = int(input())
-        parents = np.array(list(map(int, input().strip().split())))
+        parents = (list(map(int, input().strip().split())))
         print(compute_height(sk, parents))
 
 
@@ -41,7 +41,7 @@ def main():
 
         with open(file, encoding="utf8") as f:
             sk = int(f.readline())
-            parents = np.array(list(map(int, f.readline().strip().split())))
+            parents = (list(map(int, f.readline().strip().split())))
             print(compute_height(sk, parents))
     
 
