@@ -44,7 +44,8 @@ def main():
             sk = int(f.readline())
             parents = (list(map(int, f.readline().strip().split())))
             print(compute_height(sk, parents))
-    
+    else:
+        quit()
 
 
 
