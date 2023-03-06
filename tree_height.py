@@ -10,19 +10,16 @@ def compute_height(sk, parents):
     # 2 arrays
     pos = np.zeros([sk], dtype = int)
     max_h_arr = np.zeros([sk], dtype = int)
-
+    # Calculates max height
     for i in range(sk):
         if pos[i] == 0:
             node = i
             rep = 0
-            while node != -1:
-                if max_height[node] != 0:
-                    rep += max_height[node]
-                    break
+            while node != -1:      
                 pos[node] = 1
                 rep = rep + 1
-                max_h_arr[i] = rep
                 node = parents[node]
+                max_h_arr[i] = rep
     return max(max_h_arr)
 
 def main():
@@ -37,7 +34,7 @@ def main():
     # capital F code
     elif "F" in inp:
         file_name = input()
-
+        # Outputs error if "a" is in name
         if "a" in file_name:
             print("Error")
             return
