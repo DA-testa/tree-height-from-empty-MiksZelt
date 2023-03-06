@@ -1,4 +1,4 @@
-# python3
+
 # Miks Zeltiņš  221RDB123  13.Grupa
 
 import sys
@@ -24,7 +24,7 @@ def compute_height(n, parents):
 
 def main():
 
-    inp = input("Choose mode F/I")
+    inp = input()
 
     if "I" in inp:
         n = int(input())
