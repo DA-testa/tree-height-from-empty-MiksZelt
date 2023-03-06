@@ -28,21 +28,21 @@ def main():
 
     if "I" in inp:
         sk = int(input())
-        parents = np.array(list((map(int, input().strip().split()))))[:sk]
-        height = compute_height(sk, parents)
-        print(height)
+        parents = np.array(list(map(int, input().strip().split())))
+        print(compute_height(sk, parents))
 
 
     elif "F" in inp:
         file_name = input()
 
-        if "a" not in file_name:
-            file = "test/" + file_name
-            with open(file, encoding="utf8") as f:
-                sk = int(f.readline())
-                parents = np.array(list((map(int, f.readline().strip().split()))))[:sk]
-                height = compute_height(sk, parents)
-                print(height)
+        if "a" in file_name:
+            return
+        file = "test/" + file_name
+
+        with open(file, encoding="utf8") as f:
+            sk = int(f.readline())
+            parents = np.array(list(map(int, f.readline().strip().split())))
+            print(compute_height(sk, parents))
     
 
 
