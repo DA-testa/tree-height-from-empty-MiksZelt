@@ -23,20 +23,21 @@ def compute_height(n, parents):
     return max(max_h_arr)
 
 def main():
-    UserInput = input("Choose mode F/I")
 
-    if "I" in UserInput:
+    inp = input("Choose mode F/I")
+
+    if "I" in inp:
         n = int(input())
         parents = np.array(list((map(int, input().strip().split()))))[:n]
         print(compute_height(n, parents))
 
 
-    elif "F" in UserInput:
+    elif "F" in inp:
         file_name = input()
 
         if "a" not in file_name:
             file = "test/" + file_name
-            with open(file, "r" ) as f:
+            with open(file, encoding="utf8") as f:
                 n = int(f.readLine())
                 parents = np.array(list((map(int, f.readLine().strip().split()))))[:n]
                 print(compute_height(n, parents))
@@ -48,5 +49,5 @@ def main():
 sys.setrecursionlimit(10**7)  
 threading.stack_size(2**27)  
 threading.Thread(target=main).start()
-#main()
+# main()
 # print(numpy.array([1,2,3]))
